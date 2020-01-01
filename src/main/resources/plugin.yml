@@ -1,0 +1,9 @@
+name: XcraftPerformanceObserver
+main: de.xcraft.voronwe.XcraftPerformanceObserver.XcraftPerformanceObserver
+authors:
+    - Voronwe
+    - MyNameIsJan
+version: 1.14.4
+api-version: 1.14
+
+commands:
