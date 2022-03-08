@@ -3,7 +3,7 @@ main: de.xcraft.voronwe.XcraftPerformanceObserver.XcraftPerformanceObserver
 authors:
     - Voronwe
     - MyNameIsJan
-version: 1.14.4
-api-version: 1.14
+version: 1.18.1
+api-version: 1.18
 
 commands:

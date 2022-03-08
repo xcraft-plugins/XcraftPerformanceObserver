@@ -121,6 +121,7 @@ extends XcraftCommand {
         int numBars = sender instanceof ConsoleCommandSender ? 45 : 100;
         float maxmem = this.serverLogger.maxMem;
         int minused = (int)((float)this.serverLogger.minUsedMem / maxmem * (float)numBars);
+        int minUsedMem = Long.bitCount(this.serverLogger.minUsedMem);
         int used = (int)((float)this.serverLogger.usedMem / maxmem * (float)numBars);
         int maxused = (int)((float)this.serverLogger.maxUsedMem / maxmem * (float)numBars);
         int alloc = (int)((float)this.serverLogger.allocMem / maxmem * (float)numBars);
@@ -129,9 +130,9 @@ extends XcraftCommand {
             memBar.append((Object)this.getMemoryColor(minused, used, maxused, alloc, i)).append("|");
         }
         memBar.append((Object)ChatColor.WHITE).append("]");
-        output.add(String.format("%s|     %sMemory profile: %s", new Object[]{ChatColor.DARK_GRAY, ChatColor.GRAY, memBar.toString()}));
-        output.add(String.format("%s| %s    Used memory [min/max]: %s%d MB %s[%s%dMB%s/%s%dMB%s]", new Object[]{ChatColor.DARK_GRAY, ChatColor.GRAY, ChatColor.GOLD, this.serverLogger.usedMem, gray, ChatColor.RED, this.serverLogger.minUsedMem, gray, ChatColor.GREEN, this.serverLogger.maxUsedMem, gray}));
-        output.add(String.format("%s| %s    Allocated/Maximum memory: %s%dMB%s/%s%dMB%s (%d%%)", new Object[]{ChatColor.DARK_GRAY, ChatColor.GRAY, ChatColor.DARK_GREEN, this.serverLogger.allocMem, gray, ChatColor.DARK_GRAY, this.serverLogger.maxMem, ChatColor.GRAY, alloc}));
+        output.add(String.format("%s|     %sMemory profile: %s", ChatColor.DARK_GRAY, ChatColor.GRAY, memBar.toString()));
+        output.add(String.format("%s| %s    Used memory [min/max]: %s%d MB %s[%s%dMB%s/%s%dMB%s]", ChatColor.DARK_GRAY, ChatColor.GRAY, ChatColor.GOLD, this.serverLogger.usedMem, gray, ChatColor.RED, minUsedMem, gray, ChatColor.GREEN, this.serverLogger.maxUsedMem, gray));
+        output.add(String.format("%s| %s    Allocated/Maximum memory: %s%dMB%s/%s%dMB%s (%d%%)", ChatColor.DARK_GRAY, ChatColor.GRAY, ChatColor.DARK_GREEN, this.serverLogger.allocMem, gray, ChatColor.DARK_GRAY, this.serverLogger.maxMem, ChatColor.GRAY, alloc));
         output.add(fullLine);
         if (args.length != 0) {
             output.add(this.worldStatsHeader);

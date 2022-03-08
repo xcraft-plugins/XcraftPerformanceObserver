@@ -5,7 +5,7 @@
 
     <groupId>de.xcraft.voronwe</groupId>
     <artifactId>XcraftPerformanceObserver</artifactId>
-    <version>1.14.4</version>
+    <version>1.18.1</version>
     <build>
         <plugins>
             <plugin>
@@ -21,8 +21,8 @@
 
     <repositories>
         <repository>
-            <id>bukkit-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
             <id>vault-repo</id>
@@ -32,9 +32,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.13.2-R0.1-SNAPSHOT</version>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.18.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
